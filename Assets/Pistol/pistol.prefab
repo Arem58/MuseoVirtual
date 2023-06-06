@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &78601519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 78601520}
+  m_Layer: 7
+  m_Name: SpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &78601520
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78601519}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.01373, z: 0.02293}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4511655667520052993}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &250230940
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 250230941}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Attach Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250230940}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.0071, y: 0.0073, z: -0.0002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42,8 +73,9 @@ GameObject:
   - component: {fileID: 4511655667520052993}
   - component: {fileID: 1407022291}
   - component: {fileID: 1407022292}
-  - component: {fileID: 1407022290}
-  m_Layer: 9
+  - component: {fileID: 1630717961661258588}
+  - component: {fileID: 1407022294}
+  m_Layer: 7
   m_Name: pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,6 +97,7 @@ Transform:
   - {fileID: 4511655667520052997}
   - {fileID: 4511655667520052999}
   - {fileID: 250230941}
+  - {fileID: 78601520}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -97,7 +130,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.012696761, y: 0.040143833, z: 0.048735518}
   m_Center: {x: -0.00009514671, y: -0.000019676983, z: -0.0005870722}
---- !u!114 &1407022290
+--- !u!114 &1630717961661258588
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,7 +139,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4511655667520406305}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cd567df4dd123a4cb731e820ff8220c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -186,7 +219,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 250230941}
+  m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
@@ -232,6 +265,23 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  leftAttachTransform: {fileID: 0}
+  rightAttachTransform: {fileID: 0}
+--- !u!114 &1407022294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4511655667520406305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c4b39ebd2414f1438ef940e5d035cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 6975903056707657064, guid: 7f19fd42ff869a84b85e9c2793680fe1, type: 3}
+  spawnPoint: {fileID: 78601520}
+  fireSpeed: 20
 --- !u!1 &4511655667520406309
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +293,7 @@ GameObject:
   - component: {fileID: 4511655667520052997}
   - component: {fileID: 4511655667519282981}
   - component: {fileID: 4511655667518152165}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Mesh1_Group2_Group1_Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +376,7 @@ GameObject:
   - component: {fileID: 4511655667520052999}
   - component: {fileID: 4511655667519282983}
   - component: {fileID: 4511655667518152167}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Mesh2_Group3_Group1_Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
